@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prof. Doaa Khalil Ibrahim — Academic Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --teal:#0C3D5E;--teal2:#1A5C8A;--accent:#1A8A7A;--accent-d:#0F6B5C;--accent-l:#E5F5F3;
+  --gold:#C97D0A;--gold-l:#FEF3DC;--blue:#1A6BC1;--blue-l:#E8F1FB;
+  --navy:#0D2137;
+  --g50:#F8FAFC;--g100:#F1F5F9;--g200:#E2E8F0;--g300:#CBD5E1;
+  --g500:#64748B;--g700:#374151;--g900:#0F172A;
+  --text:#1E293B;--soft:#64748B;--white:#FFFFFF;
+  --radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.05);
+  --shadow-md:0 4px 20px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--g50);color:var(--text);line-height:1.6;font-size:15px}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+
+/* TOP BAR */
+.top-bar{background:var(--teal);padding:10px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.top-bar .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.top-bar .logo{display:flex;align-items:center;gap:10px;color:var(--white)}
+.top-bar .logo .orcid-icon{background:var(--accent);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:white}
+.top-bar .logo span{font-size:16px;font-weight:600}
+.top-bar nav{display:flex;gap:6px}
+.top-bar nav a{color:rgba(255,255,255,.75);font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s;cursor:pointer}
+.top-bar nav a:hover,.top-bar nav a.active{background:rgba(255,255,255,.12);color:white;text-decoration:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--teal) 0%,var(--teal2) 55%,var(--accent-d) 100%);padding:40px 0 0;color:white}
+.hero .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap}
+.avatar{width:110px;height:110px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:white;border:4px solid rgba(255,255,255,.25);flex-shrink:0}
+.hero-info{flex:1;padding-bottom:24px}
+.hero-info h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1.2;margin-bottom:6px}
+.hero-info .subtitle{font-size:15px;opacity:.88;margin-bottom:4px}
+.hero-info .affil{font-size:13px;opacity:.7;margin-bottom:14px}
+.hero-info .badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:20px;font-weight:500;white-space:nowrap}
+.badge.teal{background:rgba(26,138,122,.35);color:#9FE0D8;border:1px solid rgba(26,138,122,.4)}
+.badge.gray{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.18)}
+.badge.gold{background:rgba(201,125,10,.3);color:#FFD07A;border:1px solid rgba(201,125,10,.4)}
+.orcid-id-row{display:flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:8px 14px;width:fit-content;cursor:pointer;transition:.2s}
+.orcid-id-row:hover{background:rgba(255,255,255,.14)}
+.orcid-id-row .oid{font-family:'Inter',monospace;font-size:14px;font-weight:600;color:#9FE0D8;letter-spacing:.5px}
+.orcid-id-row .copy-hint{font-size:11px;opacity:.6;margin-left:4px}
+
+/* STATS */
+.stats-bar{background:var(--white);border-bottom:1px solid var(--g200);box-shadow:var(--shadow)}
+.stats-bar .inner{max-width:1100px;margin:auto;padding:0 24px;display:flex;overflow-x:auto}
+.stat-item{flex:1;min-width:120px;padding:18px 20px;border-right:1px solid var(--g200);text-align:center;transition:.2s}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:var(--g50)}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--teal);line-height:1}
+.stat-label{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+
+/* LAYOUT */
+.container{max-width:1100px;margin:0 auto;padding:28px 24px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:70px}
+.card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:14px 18px;border-bottom:1px solid var(--g100);display:flex;align-items:center;gap:8px;background:var(--g50)}
+.card-head h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--soft)}
+.card-head i{color:var(--accent);font-size:13px}
+.card-body{padding:16px 18px}
+.bio-text{font-size:13.5px;line-height:1.7;color:var(--g700)}
+.keywords{display:flex;flex-wrap:wrap;gap:6px}
+.kw{background:var(--accent-l);color:var(--accent-d);font-size:12px;padding:3px 9px;border-radius:20px;font-weight:500}
+.profile-link{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--g100);font-size:13px;color:var(--text);transition:.15s}
+.profile-link:last-child{border-bottom:none}
+.profile-link:hover{color:var(--blue)}
+.profile-link .icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.profile-link .icon.orcid{background:#A6CE39;color:white}
+.profile-link .icon.scopus{background:#E9691D;color:white}
+.profile-link .icon.scholar{background:#4285F4;color:white}
+.profile-link .icon.rg{background:#40BAA8;color:white}
+.profile-link .icon.cu{background:var(--teal);color:white}
+.profile-link .icon.ieee{background:#009FDB;color:white}
+.profile-link .lbl{flex:1}
+.profile-link .ext{color:var(--g300);font-size:11px}
+.contact-row{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:var(--g700);border-bottom:1px solid var(--g100)}
+.contact-row:last-child{border-bottom:none}
+.contact-row i{color:var(--accent);width:16px;text-align:center;flex-shrink:0}
+
+/* MAIN */
+.main{min-width:0}
+.tabs{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px}
+.tab-nav{display:flex;overflow-x:auto;border-bottom:1px solid var(--g200);background:var(--g50)}
+.tab-btn{padding:14px 18px;font-size:13px;font-weight:500;color:var(--soft);border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s;display:flex;align-items:center;gap:6px}
+.tab-btn:hover{color:var(--teal)}
+.tab-btn.active{color:var(--accent-d);border-bottom-color:var(--accent);background:var(--white)}
+.tab-pane{display:none;padding:24px}
+.tab-pane.active{display:block}
+.pane-sec{margin-bottom:32px}
+.pane-sec:last-child{margin-bottom:0}
+.pane-sec h2{font-size:17px;font-weight:700;color:var(--teal);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent-l);display:flex;align-items:center;gap:8px}
+.pane-sec h2 i{color:var(--accent);font-size:16px}
+
+/* PUB CARDS */
+.pub-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
+.pub-search{flex:1;min-width:200px;position:relative}
+.pub-search input{width:100%;padding:9px 12px 9px 36px;border:1px solid var(--g200);border-radius:8px;font-size:13px;outline:none;font-family:'Inter',sans-serif;transition:.2s}
+.pub-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,138,122,.1)}
+.pub-search i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:13px}
+.filter-grp{display:flex;flex-wrap:wrap;gap:6px}
+.filt{padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--g200);background:var(--white);cursor:pointer;transition:.2s;color:var(--soft)}
+.filt:hover{border-color:var(--accent);color:var(--accent-d)}
+.filt.active{background:var(--accent);color:white;border-color:var(--accent)}
+.pub-sort{padding:7px 12px;border-radius:8px;border:1px solid var(--g200);font-size:12px;font-family:'Inter',sans-serif;outline:none;color:var(--g700);background:white;cursor:pointer}
+.pub-card{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:18px;margin-bottom:12px;transition:.2s;border-left:4px solid transparent}
+.pub-card:hover{box-shadow:var(--shadow-md)}
+.pub-card.prot{border-left-color:#0C3D5E}
+.pub-card.lfc{border-left-color:#1A8A7A}
+.pub-card.renew{border-left-color:#2D8A5F}
+.pub-card.smart{border-left-color:#7C3AED}
+.pub-card.conf{border-left-color:#C97D0A}
+.pub-top{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:flex-start}
+.pub-badges{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.pub-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;white-space:nowrap}
+.pb-prot{background:#E6EEF5;color:#0C3D5E}
+.pb-lfc{background:var(--accent-l);color:var(--accent-d)}
+.pb-renew{background:#E6F5EE;color:#1A6645}
+.pb-smart{background:#F3F0FF;color:#6D28D9}
+.pb-conf{background:var(--gold-l);color:var(--gold)}
+.pb-year{background:var(--g50);color:var(--soft);border:1px solid var(--g200)}
+.pub-title{font-size:14.5px;font-weight:600;color:var(--g900);line-height:1.4;margin-bottom:6px}
+.pub-authors{font-size:12.5px;color:var(--soft);margin-bottom:5px;font-style:italic}
+.pub-authors strong{color:var(--teal);font-style:normal;font-weight:600}
+.pub-journal{font-size:12.5px;color:var(--g700);margin-bottom:10px}
+.pub-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn-sm{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 11px;border-radius:6px;border:1px solid var(--g200);background:white;cursor:pointer;font-family:'Inter',sans-serif;color:var(--g700);transition:.15s}
+.btn-sm:hover{background:var(--g50);border-color:var(--g300)}
+.btn-sm.primary{background:var(--accent-l);border-color:var(--accent);color:var(--accent-d)}
+.btn-sm.primary:hover{background:var(--accent);color:white}
+.pub-count{font-size:13px;color:var(--soft);margin-bottom:14px;font-style:italic}
+.pub-abstract{display:none;font-size:13px;color:var(--g700);line-height:1.6;margin-top:10px;padding:12px;background:var(--g50);border-radius:6px;border-left:3px solid var(--accent)}
+.pub-abstract.open{display:block}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:2px;background:var(--g200)}
+.tl-item{position:relative;margin-bottom:24px}
+.tl-dot{position:absolute;left:-24px;top:5px;width:14px;height:14px;border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 2px var(--accent);background:var(--accent)}
+.tl-dot.past{background:var(--g300);box-shadow:0 0 0 2px var(--g300)}
+.tl-dot.admin{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.tl-card{background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px 16px}
+.tl-card:hover{box-shadow:var(--shadow)}
+.tl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.tl-title{font-weight:600;font-size:14px;color:var(--teal)}
+.tl-date{font-size:12px;color:var(--soft);white-space:nowrap;background:var(--g100);padding:2px 8px;border-radius:12px}
+.tl-org{font-size:13px;color:var(--soft);font-style:italic;margin-bottom:6px}
+.tl-bul{margin-left:14px;list-style:disc;color:var(--soft)}
+.tl-bul li{margin-bottom:2px;font-size:12.5px}
+
+/* COURSE CARDS */
+.course-card{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:16px 18px;margin-bottom:12px;display:flex;align-items:flex-start;gap:14px;transition:.2s;border-left:4px solid var(--accent)}
+.course-card:hover{box-shadow:var(--shadow-md)}
+.course-icon{width:40px;height:40px;border-radius:8px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.course-info{}
+.course-title{font-weight:600;font-size:14px;color:var(--teal);margin-bottom:4px}
+.course-level{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--gold-l);color:var(--gold);display:inline-block}
+
+/* SKILLS */
+.skill-grp{margin-bottom:18px}
+.skill-grp-title{font-size:13px;font-weight:600;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.skill-grp-title i{color:var(--accent)}
+.skill-pills{display:flex;flex-wrap:wrap;gap:7px}
+.skill-pill{font-size:12.5px;padding:5px 12px;border-radius:20px;font-weight:500}
+.sp-prot{background:var(--blue-l);color:#1A5DA0;border:1px solid #A8C8EE}
+.sp-power{background:var(--accent-l);color:var(--accent-d);border:1px solid #8CCCC6}
+.sp-soft{background:#F3F0FF;color:#6D28D9;border:1px solid #C4B5FD}
+.sp-lang{background:var(--gold-l);color:var(--gold);border:1px solid #ECC88A}
+
+/* REVIEW TABLE */
+.review-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.review-table th{background:var(--g50);padding:10px 14px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--soft);font-weight:600;border-bottom:2px solid var(--g200)}
+.review-table td{padding:10px 14px;border-bottom:1px solid var(--g100);vertical-align:middle}
+.review-table tr:last-child td{border-bottom:none}
+.review-table tr:hover td{background:var(--g50)}
+.review-count{display:inline-flex;align-items:center;justify-content:center;background:var(--accent-l);color:var(--accent-d);font-weight:700;font-size:12px;width:26px;height:26px;border-radius:50%}
+
+/* COPY TOAST */
+.copy-toast{position:fixed;bottom:24px;right:24px;background:var(--teal);color:white;padding:10px 18px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.copy-toast.show{opacity:1}
+
+@media(max-width:760px){
+  .container{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .hero .inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="inner">
+    <div class="logo">
+      <div class="orcid-icon">iD</div>
+      <span>Academic Profile</span>
+    </div>
+    <nav>
+      <a href="#" class="active" onclick="switchTab('overview');return false">Overview</a>
+      <a href="#" onclick="switchTab('publications');return false">Publications</a>
+      <a href="#" onclick="switchTab('employment');return false">Employment</a>
+      <a href="#" onclick="switchTab('research');return false">Research</a>
+      <a href="#" onclick="switchTab('teaching');return false">Teaching</a>
+      <a href="#" onclick="switchTab('skills');return false">Skills</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="inner">
+    <div class="avatar">DKI</div>
+    <div class="hero-info">
+      <h1>Prof. Doaa Khalil Ibrahim</h1>
+      <p class="subtitle">Professor of Electrical Power Engineering &nbsp;·&nbsp; IEEE Senior Member (SM'13)</p>
+      <p class="affil">Electrical Power and Machines Department, Faculty of Engineering, Cairo University, Egypt</p>
+      <div class="badges">
+        <span class="badge teal"><i class="fas fa-shield-alt"></i> Power System Protection</span>
+        <span class="badge teal"><i class="fas fa-solar-panel"></i> Renewable Energy</span>
+        <span class="badge gold"><i class="fas fa-award"></i> IEEE Senior Member</span>
+        <span class="badge gray"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+        <span class="badge gray"><i class="fas fa-graduation-cap"></i> Ph.D. 2005</span>
+      </div>
+      <div class="orcid-id-row" onclick="copyOrcid()">
+        <div style="background:#A6CE39;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white;flex-shrink:0">iD</div>
+        <span class="oid">0000-0003-0177-5089</span>
+        <span class="copy-hint"><i class="far fa-copy"></i> copy</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="inner">
+    <div class="stat-item"><div class="stat-num" id="s-cites">0</div><div class="stat-label">Citations</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-pubs">0</div><div class="stat-label">Publications</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-exp">0</div><div class="stat-label">Years Active</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-phd">0</div><div class="stat-label">PhD Students</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-courses">0</div><div class="stat-label">Courses (PhD/MSc)</div></div>
+    <div class="stat-item"><div class="stat-num" id="s-ieee" style="font-size:20px">SM'13</div><div class="stat-label">IEEE Grade</div></div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="card">
+      <div class="card-head"><i class="fas fa-user-circle"></i><h3>Biography</h3></div>
+      <div class="card-body">
+        <p class="bio-text">Prof. Doaa Khalil Ibrahim (IEEE M'06, SM'13) was born in Egypt in December 1973. She received M.Sc. and Ph.D. degrees in digital protection from Cairo University in 2001 and 2005. She joined Cairo University as Demonstrator in 1996, becoming Professor in December 2016. She contributes to World Bank and Egyptian Ministry of Higher Education accreditation programs. Her research spans digital protection, microgrids, renewable energy, and smart grid systems.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-tags"></i><h3>Research Keywords</h3></div>
+      <div class="card-body">
+        <div class="keywords">
+          <span class="kw">Digital Protection</span>
+          <span class="kw">Power System Protection</span>
+          <span class="kw">Isolated Microgrids</span>
+          <span class="kw">Load Frequency Control</span>
+          <span class="kw">Renewable Energy</span>
+          <span class="kw">DFIG Wind Systems</span>
+          <span class="kw">Smart Grid</span>
+          <span class="kw">PMU-Based Protection</span>
+          <span class="kw">DOCR Coordination</span>
+          <span class="kw">Distributed Generation</span>
+          <span class="kw">Electric Vehicles</span>
+          <span class="kw">Big Data</span>
+          <span class="kw">Hybrid Energy</span>
+          <span class="kw">Power Quality</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-external-link-alt"></i><h3>Academic Profiles</h3></div>
+      <div class="card-body" style="padding:10px 18px">
+        <a class="profile-link" href="https://orcid.org/0000-0003-0177-5089" target="_blank">
+          <div class="icon orcid">iD</div>
+          <div class="lbl"><div style="font-weight:500">ORCID</div><div style="font-size:11px;color:var(--soft)">0000-0003-0177-5089</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+        <a class="profile-link" href="https://www.scopus.com/authid/detail.uri?authorId=9840754800" target="_blank">
+          <div class="icon scopus"><i class="fas fa-book"></i></div>
+          <div class="lbl"><div style="font-weight:500">Scopus</div><div style="font-size:11px;color:var(--soft)">ID: 9840754800</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+        <a class="profile-link" href="https://scholar.google.com/citations?user=z8DAB9sAAAAJ&hl=en" target="_blank">
+          <div class="icon scholar"><i class="fab fa-google"></i></div>
+          <div class="lbl"><div style="font-weight:500">Google Scholar</div><div style="font-size:11px;color:var(--soft)">2,226+ citations</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+        <a class="profile-link" href="https://www.researchgate.net/profile/Doaa-Ibrahim-2" target="_blank">
+          <div class="icon rg" style="font-weight:700;font-size:11px">RG</div>
+          <div class="lbl"><div style="font-weight:500">ResearchGate</div><div style="font-size:11px;color:var(--soft)">Doaa-Ibrahim-2</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+        <a class="profile-link" href="https://scholar.cu.edu.eg/?q=doaakhalil/" target="_blank">
+          <div class="icon cu" style="font-size:10px;font-weight:700">CU</div>
+          <div class="lbl"><div style="font-weight:500">Cairo University</div><div style="font-size:11px;color:var(--soft)">Faculty profile</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+        <a class="profile-link" href="https://ieeexplore.ieee.org/author/38268290100" target="_blank">
+          <div class="icon ieee"><i class="fas fa-microchip"></i></div>
+          <div class="lbl"><div style="font-weight:500">IEEE Xplore</div><div style="font-size:11px;color:var(--soft)">Author page</div></div>
+          <i class="fas fa-external-link-alt ext"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><i class="fas fa-address-card"></i><h3>Contact</h3></div>
+      <div class="card-body" style="padding:10px 18px">
+        <div class="contact-row"><i class="fas fa-envelope"></i><a href="mailto:doaakhalil73@eng.cu.edu.eg">doaakhalil73@eng.cu.edu.eg</a></div>
+        <div class="contact-row"><i class="fas fa-phone"></i><span>+20 122 423 2822</span></div>
+        <div class="contact-row"><i class="fas fa-university"></i><span>Faculty of Engineering, Cairo University, 1 Gamaa Street, Giza, Egypt</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('overview')"><i class="fas fa-th-large"></i>Overview</button>
+        <button class="tab-btn" onclick="switchTab('publications')"><i class="fas fa-file-alt"></i>Publications</button>
+        <button class="tab-btn" onclick="switchTab('employment')"><i class="fas fa-briefcase"></i>Employment</button>
+        <button class="tab-btn" onclick="switchTab('research')"><i class="fas fa-flask"></i>Research</button>
+        <button class="tab-btn" onclick="switchTab('teaching')"><i class="fas fa-chalkboard-teacher"></i>Teaching</button>
+        <button class="tab-btn" onclick="switchTab('skills')"><i class="fas fa-tools"></i>Skills</button>
+      </div>
+
+      <!-- OVERVIEW -->
+      <div class="tab-pane active" id="tab-overview">
+        <div class="pane-sec">
+          <h2><i class="fas fa-star"></i>Research Highlights</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--accent-l);border:1px solid #8CCCC6;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--accent-d)">2,226+</div>
+              <div style="font-size:12px;color:var(--accent-d);margin-top:2px">Total Citations</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">Google Scholar · 85+ publications</div>
+            </div>
+            <div style="background:var(--blue-l);border:1px solid #A8C8EE;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:#1A5DA0">IEEE SM</div>
+              <div style="font-size:12px;color:#1A5DA0;margin-top:2px">Senior Member since 2013</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">IEEE Member since 2006</div>
+            </div>
+            <div style="background:var(--gold-l);border:1px solid #ECC88A;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:var(--gold)">30 Years</div>
+              <div style="font-size:12px;color:var(--gold);margin-top:2px">Academic Career at Cairo University</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">Since 1996 · 5 Academic Ranks</div>
+            </div>
+            <div style="background:#F3F0FF;border:1px solid #C4B5FD;border-radius:8px;padding:16px">
+              <div style="font-size:22px;font-weight:700;color:#6D28D9">World Bank</div>
+              <div style="font-size:12px;color:#6D28D9;margin-top:2px">Project Contributor</div>
+              <div style="font-size:11px;color:var(--soft);margin-top:6px">Higher Education Development, Egypt · 2005–2008</div>
+            </div>
+          </div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-clock"></i>Recent Publications</h2>
+          <div id="recent-pubs"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-shield-alt"></i>Research Areas Overview</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--teal);margin-bottom:6px"><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:6px"></i>Power System Protection</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Digital protection · DOCR coordination · PMU-based wide-area protection · SSSC-compensated lines · Broken conductor faults</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--teal);margin-bottom:6px"><i class="fas fa-microchip" style="color:var(--accent);margin-right:6px"></i>Microgrid Control</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Load frequency control (LFC) · Isolated microgrids · Fractional-order controllers · Metaheuristic optimization</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--teal);margin-bottom:6px"><i class="fas fa-solar-panel" style="color:var(--accent);margin-right:6px"></i>Renewable Energy</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">DFIG wind energy · PV systems · Hybrid energy decarbonization · Wind turbine layout optimization</div>
+            </div>
+            <div style="background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+              <div style="font-weight:600;font-size:13px;color:var(--teal);margin-bottom:6px"><i class="fas fa-network-wired" style="color:var(--accent);margin-right:6px"></i>Smart Grid & EVs</div>
+              <div style="font-size:12px;color:var(--soft);line-height:1.6">Big data for load forecasting · Electric vehicle integration · Demand response · Smart metering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="tab-pane" id="tab-publications">
+        <div style="background:var(--accent-l);border:1px solid #8CCCC6;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13px;color:var(--accent-d)">
+          <i class="fas fa-info-circle" style="margin-right:6px"></i>
+          Showing selected recent publications (2023–2024). Prof. Ibrahim has <strong>85+ total publications</strong>.
+          <a href="https://scholar.google.com/citations?user=z8DAB9sAAAAJ&hl=en" target="_blank" style="color:var(--accent-d);font-weight:600;margin-left:4px">View full list on Google Scholar →</a>
+        </div>
+        <div class="pub-controls">
+          <div class="pub-search"><i class="fas fa-search"></i>
+            <input type="text" id="pub-search-input" placeholder="Search publications..." oninput="renderPubs()">
+          </div>
+          <div class="filter-grp">
+            <button class="filt active" onclick="setFilter(this,'all')">All</button>
+            <button class="filt" onclick="setFilter(this,'prot')">Protection</button>
+            <button class="filt" onclick="setFilter(this,'lfc')">LFC / Microgrids</button>
+            <button class="filt" onclick="setFilter(this,'renew')">Renewable Energy</button>
+            <button class="filt" onclick="setFilter(this,'smart')">Smart Grid</button>
+            <button class="filt" onclick="setFilter(this,'conf')">Conference</button>
+          </div>
+          <select class="pub-sort" onchange="renderPubs()">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+        <p class="pub-count" id="pub-count"></p>
+        <div id="pub-list"></div>
+      </div>
+
+      <!-- EMPLOYMENT -->
+      <div class="tab-pane" id="tab-employment">
+        <div class="pane-sec">
+          <h2><i class="fas fa-briefcase"></i>Academic Positions</h2>
+          <div class="timeline" id="emp-timeline"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-globe"></i>Administrative & Expert Roles</h2>
+          <div class="timeline" id="admin-timeline"></div>
+        </div>
+        <div class="pane-sec">
+          <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+          <div class="timeline" id="edu-timeline"></div>
+        </div>
+      </div>
+
+      <!-- RESEARCH -->
+      <div class="tab-pane" id="tab-research">
+        <div id="research-content"></div>
+      </div>
+
+      <!-- TEACHING -->
+      <div class="tab-pane" id="tab-teaching">
+        <div class="pane-sec">
+          <h2><i class="fas fa-university"></i>PhD & MSc Level Courses</h2>
+          <div style="background:var(--gold-l);border:1px solid #ECC88A;border-radius:8px;padding:10px 14px;margin-bottom:18px;font-size:13px;color:#7A4A10;display:flex;gap:8px;align-items:center">
+            <i class="fas fa-star" style="color:var(--gold)"></i>
+            All courses below are taught at <strong>Postgraduate Level (Ph.D. and M.Sc.)</strong> at Cairo University's Faculty of Engineering.
+          </div>
+          <div id="courses-list"></div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="tab-pane" id="tab-skills">
+        <div id="skills-content"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="copy-toast" id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────
+const PUBS = [
+  {id:'J10',type:'smart',year:2024,
+   title:'Big Data Resolving Using Apache Spark for Load Forecasting and Demand Response in Smart Grid: A Case Study of Low Carbon London Project',
+   authors:'H. A. E.-S. Ali, M. H. Alham, and <strong>D. K. Ibrahim</strong>',
+   journal:'Journal of Big Data',details:'Vol. 11, Issue 1, Art. 59, 2024',
+   doi:'10.1186/s40537-024-00909-6',
+   abstract:'Emphasizes the role of big data in resolving load forecasting, renewable energy integration, and demand response in smart grids. Investigates Low Carbon London Project meter data using Apache Spark for scalable processing of massive smart meter data streams.'},
+  {id:'J9',type:'prot',year:2024,
+   title:'Identification of Broken Conductor Faults in Interconnected Transmission Systems Based on Discrete Wavelet Transform',
+   authors:'B. A. Rashad, <strong>D. K. Ibrahim</strong>, M. I. Gilany, A. S. Abdelhamid, and W. Abdelfattah',
+   journal:'PLoS ONE',details:'Vol. 19, Issue 1, e0296773, 2024',
+   doi:'10.1371/journal.pone.0296773',
+   abstract:'Proposes a novel protection scheme based on discrete wavelet transform for identifying broken conductor faults in multi-terminal interconnected HV transmission networks where conventional distance relays fail.'},
+  {id:'J8',type:'lfc',year:2024,
+   title:'A Novel Cascade-Loop Controller for Load Frequency Control of Isolated Microgrid via Dandelion Optimizer',
+   authors:'E. Khalil, T. A. Boghdady, M. H. Alham, and <strong>D. K. Ibrahim</strong>',
+   journal:'Ain Shams Engineering Journal',details:'Vol. 15, Issue 3, Art. 102526, 2024',
+   doi:'10.1016/j.asej.2023.102526',
+   abstract:'Presents a novel fractional-order cascade controller (FPDN-FPTID) for LFC in isolated microgrids. Optimized by Dandelion Optimizer with anti-windup mechanism. Tested on single and multi-area IMGs under RES uncertainty.'},
+  {id:'J7',type:'lfc',year:2024,
+   title:'A Novel Multi-Objective Tuning Formula for Load Frequency Controllers in an Isolated Low-Inertia Microgrid Incorporating PV/wind/FC/BESS',
+   authors:'E. Khalil, T. A. Boghdady, M. H. Alham, and <strong>D. K. Ibrahim</strong>',
+   journal:'Journal of Energy Storage',details:'Vol. 82, Art. 110606, 2024',
+   doi:'10.1016/j.est.2024.110606',
+   abstract:'Proposes a novel multi-objective tuning strategy to improve LFC in isolated low-inertia microgrids incorporating PV, wind, fuel cells, and BESS. Demonstrates superior frequency stability performance over conventional approaches.'},
+  {id:'J6',type:'prot',year:2023,
+   title:'Reliable Protection for Static Synchronous Series Compensated Double-Circuit Transmission Lines Based on Positive Sequence Active Power Calculations Using PMUs',
+   authors:'M. M. Elhabashy, H. M. Sharaf, and <strong>D. K. Ibrahim</strong>',
+   journal:'Electric Power Systems Research',details:'Vol. 223, Art. 109695, 2023',
+   doi:'10.1016/j.epsr.2023.109695',
+   abstract:'Presents a PMU-based protection scheme for SSSC-compensated double-circuit transmission lines using positive sequence active power calculations. Guarantees robust coordination between primary and backup relays under wide operating variations.'},
+  {id:'J5',type:'renew',year:2023,
+   title:'A Novel Approach for Optimal Hybrid Energy Decarbonization Using Multi-Criteria Decision Analysis: Abu Rudeis, Egypt as a Case Study',
+   authors:'M. Ismail, M. H. Alham, and <strong>D. K. Ibrahim</strong>',
+   journal:'Energy Conversion and Management',details:'Vol. 290, Art. 117199, 2023',
+   doi:'10.1016/j.enconman.2023.117199',
+   abstract:'Introduces a novel multi-criteria decision analysis approach for optimal hybrid energy system decarbonization. Implemented for Abu Rudeis, Egypt as a real case study, integrating renewable sources for industrial energy transition.'},
+  {id:'J4',type:'renew',year:2023,
+   title:'Performance Enhancement of Doubly-Fed Induction Generator-Based Wind Energy System',
+   authors:'T. A. Boghdady, I. A. Sweed, and <strong>D. K. Ibrahim</strong>',
+   journal:'International Journal of Renewable Energy Research (IJRER)',details:'Vol. 13, Issue 1, pp. 311-325, 2023',
+   doi:null,
+   abstract:'Proposes a technique to enhance the performance of DFIG-based wind energy systems for improved power quality and stability. Evaluated under various wind speed conditions and grid disturbances.'},
+  {id:'J3',type:'renew',year:2023,
+   title:'Applying Marine Predators Algorithm for Optimizing the Layout of Wind Turbines',
+   authors:'M. H. Alham, M. F. Gad, and <strong>D. K. Ibrahim</strong>',
+   journal:'International Journal of Renewable Energy Research (IJRER)',details:'Vol. 13, Issue 2, pp. 730-740, 2023',
+   doi:null,
+   abstract:'Applies the Marine Predators Algorithm (MPA) for optimizing the spatial layout of wind turbines in a wind farm to maximize energy output and minimize wake effects. Compared to state-of-the-art layout optimization techniques.'},
+  {id:'J2',type:'lfc',year:2023,
+   title:'Enhancing the Conventional Controllers for Load Frequency Control of Isolated Microgrids Using Proposed Multi-Objective Formulation via Artificial Rabbits Optimization Algorithm',
+   authors:'A. E. Khalil, T. A. Boghdady, M. H. Alham, and <strong>D. K. Ibrahim</strong>',
+   journal:'IEEE Access',details:'Vol. 11, pp. 3472–3493, 2023',
+   doi:'10.1109/ACCESS.2023.3234043',
+   abstract:'Proposes a multi-objective formulation for tuning conventional PID-based controllers in isolated microgrids using the Artificial Rabbits Optimization Algorithm (ARO). Demonstrates significant improvements in frequency deviation metrics across renewable-integrated microgrid scenarios.'},
+  {id:'C1',type:'conf',year:2023,
+   title:'Novel Single Loop Load Frequency Controller for Isolated Microgrid Via Geometric Mean Optimization',
+   authors:'E. A. Khalil, M. H. Alham, T. A. Boghdady, and <strong>D. K. Ibrahim</strong>',
+   journal:'MEPCON 2023 — 24th International Middle East Power Systems Conference',details:'Mansoura, Egypt, 2023',
+   doi:'10.1109/MEPCON58725.2023.10462456',
+   abstract:'Proposes a novel single-loop controller for load frequency control in isolated microgrids optimized using the Geometric Mean Optimizer (GMO). Benchmarked against classical controllers and demonstrates superior transient response.'},
+];
+
+const EMPLOYMENT = [
+  {title:'Professor of Electrical Power Engineering',org:'Faculty of Engineering, Electrical Power & Machines Dept., Cairo University, Egypt',date:'December 2016 – Present',dot:'current',
+   details:['Teaching PhD and MSc courses in power systems protection, renewable energy, and power quality','Supervising PhD and MSc students in advanced power engineering research','Leading research in digital protection, microgrid control, and renewable energy integration']},
+  {title:'Associate Professor',org:'Faculty of Engineering, Cairo University, Egypt',date:'2011 – December 2016',dot:'past',details:['Research and teaching in power system protection and renewable energy systems']},
+  {title:'Assistant Professor',org:'Faculty of Engineering, Cairo University, Egypt',date:'2005 – 2011',dot:'past',details:['Joined the faculty as Assistant Professor following PhD completion']},
+  {title:'Demonstrator & Research Assistant',org:'Faculty of Engineering, Cairo University, Egypt',date:'1996 – 2005',dot:'past',details:['Started academic career at Cairo University while pursuing M.Sc. and Ph.D. degrees']},
+];
+const ADMIN = [
+  {title:'Expert — PMU Technical Office',org:'Project Management Unit (PMU), Ministry of Higher Education, Egypt',date:'Jul 2013 – Nov 2014',dot:'admin',
+   details:['Contributed as technical expert for higher education development initiatives']},
+  {title:'Expert — Continuous Improvement & Accreditation Program',org:'Program of Continuous Improvement and Qualifying for Accreditation in Higher Education, Egypt',date:'Jan 2010 – Jun 2013',dot:'admin',
+   details:['National expert in quality assurance and academic accreditation programs']},
+  {title:'World Bank Project Contributor',org:'World Bank Project in Higher Education Development, Egypt',date:'2005 – 2008',dot:'admin',
+   details:['Contributed expertise to World Bank-funded higher education development in Egypt']},
+];
+const EDUCATION = [
+  {title:'Doctor of Philosophy (Ph.D.) — Digital Protection',org:'Faculty of Engineering, Cairo University, Egypt',date:'2005',dot:'past',
+   details:['Dissertation focused on digital protection systems for power networks','Supervised at Cairo University, Egypt']},
+  {title:'Master of Science (M.Sc.) — Digital Protection',org:'Faculty of Engineering, Cairo University, Egypt',date:'2001',dot:'past',details:['Specialization in digital protection techniques for power systems']},
+  {title:'Bachelor of Science (B.Sc.) — Electrical Engineering',org:'Faculty of Engineering, Cairo University, Egypt',date:'~1996',dot:'past',details:[]},
+];
+const COURSES = [
+  {title:'Renewable Energy Resources',icon:'🌱',
+   desc:'Advanced study of renewable energy technologies: solar PV, wind, hydrokinetic, fuel cells, and hybrid energy systems. Covers resource assessment, system integration, techno-economic optimization, and grid-code compliance.'},
+  {title:'Digital Protection of Power Systems',icon:'🛡️',
+   desc:'Comprehensive study of digital relay algorithms, protective relaying for transmission and distribution networks, adaptive protection schemes, PMU-based wide-area protection, and DOCR coordination techniques.'},
+  {title:'Protection of Power Systems',icon:'⚡',
+   desc:'Fundamentals and advanced topics in protection of generators, transformers, transmission lines, distribution systems, and microgrids. Covers fault current calculations, relay coordination, and protection of compensated systems.'},
+  {title:'Power Quality for Industrial and Residential Applications',icon:'📊',
+   desc:'Analysis of power quality disturbances: harmonics, voltage sags/swells, flicker, and unbalance. Standards (IEEE, IEC), monitoring techniques, and mitigation measures for industrial and residential environments.'},
+  {title:'Utilization of Electrical Energy',icon:'🔌',
+   desc:'Advanced topics in efficient utilization of electrical energy in industrial, commercial, and residential sectors. Covers energy management systems, demand-side management, electric drives, and smart grid applications.'},
+];
+
+const RESEARCH_AREAS = [
+  {title:'Digital Protection of Power Systems',period:'2001 – Present',tag:'Core Specialization',
+   desc:'Ph.D. specialization area. Covers digital relay algorithms, adaptive protection, PMU-based wide-area protection, and protection of SSSC/TCSC-compensated transmission lines. Includes coordination of directional overcurrent relays (DOCRs) in systems with distributed generation.'},
+  {title:'Microgrid Protection & Load Frequency Control',period:'2015 – Present',tag:'Active',
+   desc:'Protection coordination schemes for inverter-based islanded microgrids. LFC design for isolated low-inertia microgrids incorporating PV, wind, fuel cells, and battery storage. Co-supervised multiple PhD and MSc theses resulting in publications in IEEE Access, Ain Shams Engineering Journal, and Journal of Energy Storage.'},
+  {title:'Renewable Energy Systems',period:'2010 – Present',tag:'Active',
+   desc:'DFIG-based wind energy performance enhancement, marine predators algorithm for wind farm layout optimization, hybrid energy decarbonization using multi-criteria decision analysis (MCDA), and PV system optimization for grid-connected applications.'},
+  {title:'Smart Grid & Big Data for Power Systems',period:'2018 – Present',tag:'Active',
+   desc:'Application of big data technologies (Apache Spark) for smart meter data processing, load forecasting, and demand response in smart grids. Case study: Low Carbon London Project. Integration of ICT with power system monitoring and management.'},
+  {title:'Electric Vehicles & Grid Integration',period:'2020 – Present',tag:'Active',
+   desc:'Impact of EV home charging on distribution network load profiles at different adoption rates. Optimal placement of EV charging stations integrated with PV systems. Analysis of long-term effects on Egyptian grid load forecasting.'},
+  {title:'Fault Detection in Transmission Networks',period:'2008 – Present',tag:'Ongoing',
+   desc:'Novel schemes for broken conductor fault identification in interconnected multi-terminal HV transmission systems using discrete wavelet transform. Broken bar fault detection in induction motors using signal processing techniques.'},
+];
+
+let currentFilter = 'all';
+
+function setFilter(el, f) {
+  currentFilter = f;
+  document.querySelectorAll('.filt').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderPubs();
+}
+
+function renderPubs() {
+  const q = (document.getElementById('pub-search-input').value||'').toLowerCase();
+  const sort = document.querySelector('.pub-sort').value;
+  let data = PUBS.filter(p => {
+    const match = !q || p.title.toLowerCase().includes(q) || p.authors.replace(/<[^>]+>/g,'').toLowerCase().includes(q) || p.journal.toLowerCase().includes(q);
+    const filt = currentFilter==='all' || p.type===currentFilter;
+    return match && filt;
+  });
+  data.sort((a,b) => sort==='oldest' ? a.year-b.year : b.year-a.year);
+  document.getElementById('pub-count').textContent = `Showing ${data.length} work${data.length!==1?'s':''}`;
+  document.getElementById('pub-list').innerHTML = data.map(pubCard).join('');
+}
+
+function pubCard(p) {
+  const typeLabels = {prot:'Protection',lfc:'LFC / Microgrids',renew:'Renewable Energy',smart:'Smart Grid',conf:'Conference'};
+  const typeBadge = {prot:'pb-prot',lfc:'pb-lfc',renew:'pb-renew',smart:'pb-smart',conf:'pb-conf'};
+  const badges = [
+    `<span class="pub-badge ${typeBadge[p.type]}">${typeLabels[p.type]}</span>`,
+    `<span class="pub-badge pb-year">${p.year}</span>`
+  ];
+  const doiBtn = p.doi ? `<a href="https://doi.org/${p.doi}" target="_blank" class="btn-sm primary"><i class="fas fa-external-link-alt"></i>DOI</a>` : '';
+  const absBtn = p.abstract ? `<button class="btn-sm" onclick="toggleAbs('abs-${p.id}',this)"><i class="fas fa-chevron-down"></i>Abstract</button>` : '';
+  const absDiv = p.abstract ? `<div class="pub-abstract" id="abs-${p.id}">${p.abstract}</div>` : '';
+  return `<div class="pub-card ${p.type}">
+    <div class="pub-top"><div class="pub-badges">${badges.join('')}</div><span style="font-size:12px;font-weight:600;color:var(--soft)">[${p.id}]</span></div>
+    <div class="pub-title">${p.title}</div>
+    <div class="pub-authors">${p.authors}</div>
+    <div class="pub-journal"><b>${p.journal}</b> · ${p.details}</div>
+    <div class="pub-actions">
+      ${doiBtn}
+      <button class="btn-sm" onclick="copyCite('${p.id}')"><i class="fas fa-copy"></i>Copy Citation</button>
+      ${absBtn}
+    </div>
+    ${absDiv}
+  </div>`;
+}
+
+function toggleAbs(id, btn) {
+  const el = document.getElementById(id);
+  const open = el.classList.toggle('open');
+  btn.innerHTML = open ? '<i class="fas fa-chevron-up"></i>Hide' : '<i class="fas fa-chevron-down"></i>Abstract';
+}
+
+function copyCite(id) {
+  const p = PUBS.find(x=>x.id===id);
+  const authors = p.authors.replace(/<[^>]+>/g,'');
+  const cite = p.doi
+    ? `${authors}, "${p.title}," ${p.journal}, ${p.details}. DOI: ${p.doi}`
+    : `${authors}, "${p.title}," ${p.journal}, ${p.details}.`;
+  navigator.clipboard.writeText(cite).then(()=>showToast('Citation copied!'));
+}
+
+function renderTimeline(data, id) {
+  document.getElementById(id).innerHTML = data.map(item=>`
+    <div class="tl-item">
+      <div class="tl-dot ${item.dot}"></div>
+      <div class="tl-card">
+        <div class="tl-top">
+          <div class="tl-title">${item.title}</div>
+          <div class="tl-date">${item.date}</div>
+        </div>
+        <div class="tl-org">${item.org}</div>
+        ${item.details.length?`<ul class="tl-bul">${item.details.map(d=>`<li>${d}</li>`).join('')}</ul>`:''}
+      </div>
+    </div>`).join('');
+}
+
+function renderResearch() {
+  document.getElementById('research-content').innerHTML = `
+    <div class="pane-sec"><h2><i class="fas fa-project-diagram"></i>Research Areas</h2>
+    ${RESEARCH_AREAS.map(r=>`
+      <div style="border:1px solid var(--g200);border-radius:10px;padding:16px 18px;margin-bottom:12px;background:var(--white);border-left:4px solid var(--accent)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+          <div style="font-weight:600;font-size:14px;color:var(--teal)">${r.title}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="font-size:11px;background:var(--accent-l);color:var(--accent-d);padding:2px 8px;border-radius:10px;font-weight:500">${r.tag}</span>
+            <span style="font-size:11px;background:var(--g100);color:var(--soft);padding:2px 8px;border-radius:10px">${r.period}</span>
+          </div>
+        </div>
+        <div style="font-size:13px;color:var(--g700);line-height:1.6">${r.desc}</div>
+      </div>`).join('')}
+    </div>`;
+}
+
+function renderCourses() {
+  document.getElementById('courses-list').innerHTML = COURSES.map(c=>`
+    <div class="course-card">
+      <div class="course-icon">${c.icon}</div>
+      <div class="course-info">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+          <div class="course-title">${c.title}</div>
+          <span class="course-level">PhD & MSc Level</span>
+        </div>
+        <div style="font-size:13px;color:var(--g700);line-height:1.6">${c.desc}</div>
+      </div>
+    </div>`).join('');
+}
+
+function renderSkills() {
+  document.getElementById('skills-content').innerHTML = `
+    <div class="pane-sec"><h2><i class="fas fa-brain"></i>Research Expertise & Skills</h2>
+      <div class="skill-grp">
+        <div class="skill-grp-title"><i class="fas fa-shield-alt"></i>Power System Protection</div>
+        <div class="skill-pills">
+          ${['Digital Relay Algorithms','PMU-Based Wide-Area Protection','DOCR Coordination','SSSC/TCSC Impact Analysis','Distance Protection','Adaptive Protection','Microgrid Protection','Fault Current Limiters'].map(s=>`<span class="skill-pill sp-prot">${s}</span>`).join('')}
+        </div>
+      </div>
+      <div class="skill-grp">
+        <div class="skill-grp-title"><i class="fas fa-microchip"></i>Power Systems & Control</div>
+        <div class="skill-pills">
+          ${['Load Frequency Control','Isolated Microgrids','Fractional-Order Controllers','Metaheuristic Optimization','DFIG Wind Systems','Hybrid Energy Systems','Power Quality','Distributed Generation'].map(s=>`<span class="skill-pill sp-power">${s}</span>`).join('')}
+        </div>
+      </div>
+      <div class="skill-grp">
+        <div class="skill-grp-title"><i class="fas fa-desktop"></i>Simulation Software</div>
+        <div class="skill-pills">
+          ${['MATLAB/Simulink','PSCAD','ETAP','DIgSILENT PowerFactory','ATP/EMTP','HOMER Pro'].map(s=>`<span class="skill-pill sp-soft">${s}</span>`).join('')}
+        </div>
+      </div>
+      <div class="skill-grp">
+        <div class="skill-grp-title"><i class="fas fa-language"></i>Languages</div>
+        <div class="skill-pills">
+          <span class="skill-pill sp-lang">Arabic (Native)</span>
+          <span class="skill-pill sp-lang">English (Professional)</span>
+        </div>
+      </div>
+    </div>
+    <div class="pane-sec"><h2><i class="fas fa-medal"></i>Professional Memberships</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:14px">
+          <div style="background:#009FDB;width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700;flex-shrink:0">IEEE</div>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:var(--teal)">IEEE Senior Member (SM'13)</div>
+            <div style="font-size:12px;color:var(--soft);margin-top:2px">Senior Member since 2013 · Member since 2006 · Institute of Electrical and Electronics Engineers</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderRecentPubs() {
+  document.getElementById('recent-pubs').innerHTML = PUBS.slice(0,4).map(pubCard).join('');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.top-bar nav a').forEach(a=>a.classList.remove('active'));
+  const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick').includes(name));
+  if(btn)btn.classList.add('active');
+  const pane=document.getElementById('tab-'+name);
+  if(pane)pane.classList.add('active');
+}
+
+function animateCount(id, target, dec=0, delay=0) {
+  setTimeout(()=>{
+    let start=0, dur=1200;
+    const el=document.getElementById(id);
+    if(!el)return;
+    const timer=setInterval(()=>{
+      start+=16;
+      const p=Math.min(start/dur,1);
+      const e=1-Math.pow(1-p,3);
+      el.textContent=dec?( target*e).toFixed(dec):Math.round(target*e);
+      if(p>=1){clearInterval(timer);el.textContent=dec?target.toFixed(dec):target}
+    },16);
+  },delay);
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+function copyOrcid(){
+  navigator.clipboard.writeText('0000-0003-0177-5089').then(()=>showToast('ORCID iD copied!'));
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  renderPubs();
+  renderTimeline(EMPLOYMENT,'emp-timeline');
+  renderTimeline(ADMIN,'admin-timeline');
+  renderTimeline(EDUCATION,'edu-timeline');
+  renderResearch();
+  renderCourses();
+  renderSkills();
+  renderRecentPubs();
+  animateCount('s-cites',2226,0,0);
+  animateCount('s-pubs',85,0,100);
+  animateCount('s-exp',30,0,200);
+  animateCount('s-phd',10,0,300);
+  animateCount('s-courses',5,0,400);
+});
+</script>
+</body>
+</html>
